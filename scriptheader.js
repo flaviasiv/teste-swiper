@@ -1,18 +1,16 @@
-$(function(){
-  var lastScrollTop = 0, delta = 15;
-  $(window).scroll(function(event){
-     var st = $(this).scrollTop();
-     
-     if(Math.abs(lastScrollTop - st) <= delta)
-        return;
-if ((st > lastScrollTop) && (lastScrollTop>0)) {
-     // downscroll code
-    $("header").css("top","-80px");
+let lastScrollTop = 0; // Armazena a posição anterior do scroll
+const header = document.querySelector(".navbar"); // Seleciona o header fixo
 
- } else {
-    // upscroll code
-    $("header").css("top","0px");
- }
-     lastScrollTop = st;
-  });
+window.addEventListener("scroll", () => {
+  const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (currentScroll > lastScrollTop) {
+    // Scroll para baixo: esconde o header
+    header.style.transform = "translateY(-100%)";
+  } else {
+    // Scroll para cima: mostra o header
+    header.style.transform = "translateY(0)";
+  }
+
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Evita valores negativos no topo da página
 });

@@ -4,13 +4,219 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styleheader.css">
+    <!-- <link rel="stylesheet" href="styleheader.css"> -->
+    <style>
+      header {
+  position: relative;
+  display:flex;
+  justify-content: space-between;
+  width:100%;
+  max-width:100vw;
+  margin: auto;
+  height: 0px;
+  z-index: 9;
+  font-family: 'Glacial Indifference';
+}
+#home{
+  position: fixed;
+  height: 80px;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  z-index: 9;
+  box-sizing: border-box;
+}
+#home::before {
+  content: '';
+  position: fixed;
+  height: 80px;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  z-index: 9;
+  box-sizing: border-box;
+} 
+.navbar{   
+  display:flex;
+  justify-content: space-between;
+  position: fixed;
+  align-items: center;
+  right: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  max-width: 99999px;
+  margin: auto;
+  background: #082533;
+  backdrop-filter: blur(14.149999618530273px);
+  height: 80px;
+  scroll-behavior: smooth;
+  transition: 0.7s;
+  z-index: 9;
+} 
+.nonebar{
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width:160px;
+}
+.menu-links{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 30px 0 30px;
+  margin: auto;
+  align-items: center;  
+}
+.menu-linksbtn ul{
+  list-style: none;
+  display: flex;
+  margin: 0 auto;
+  justify-content:space-between;
+  width:400px;
+  text-align: center;
+}
+.menu-linksbtn a {
+  display:block;
+  text-align: center;
+  color:#77ABD1;
+  text-decoration:none;
+  font-family: 'Montserrat';
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 190%;
+}
+.menu-linksbtn a:hover{
+  color:#fff;
+  font-weight: 700;
+  transition: 0.1s ease-in-out;
+}
+.menusocial{
+  right: 0;
+}
+.menusocial img{
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.menusocial ul{
+  position: relative;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  justify-content:right;
+  width:160px;
+  gap: 8px;
+}
+.menusocial ul a {
+  display: flex;
+  text-decoration:none;
+  cursor: pointer;
+  align-items: center;
+}
+.callnow a{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  color: #11455F;
+  border: 1px solid #11455F;
+  border-radius: 9.372px;
+  background: var(--Linear, linear-gradient(86deg, #8E8E8E 0%, #D9D9D9 46.44%, #B4B4B4 100%));  font-size: 18.744px;
+  font-weight: 700;
+  line-height: 120%;
+  align-items: center;
+  padding: 14px 0px;
+  width: 159px;
+  text-align: center;
+  margin: auto;
+
+font-family: 'Inter';
+font-size: 16px;
+font-weight: 700;
+line-height: 120%;
+}
+.callnow svg{
+  stroke: #11455F;
+  width: 26px;
+}
+.callnow a:hover{
+background: transparent;
+  border: 1.171px solid #fff;
+color: #fff;
+}
+.callnow a:hover svg{
+  stroke: #fff;
+}
+.btn-toggle{display: none;}
+.logo-m{
+display:block;
+width: 70px;
+margin: 0;
+}
+    </style>
 </head>
 <body>
-  <header>
-  Header – Slide up on scroll down, slide down on scroll up
-  </header>
   
+  <header> 
+    <div id="home">
+        <nav class="navbar" id="homenav">
+          <a href="#"><img src="https://uscleaningoh.com/wp-content/uploads/2024/12/Logo-usc.png" alt="" class="logohead logow"draggable="false"></a>
+          <div class="callnow callm"><a href="tel:+1">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_32097_57)">
+              <path d="M13.2232 4.39316C14.0814 4.56059 14.8701 4.98031 15.4884 5.59857C16.1066 6.21684 16.5263 7.00554 16.6938 7.86372M13.2232 0.878662C15.0062 1.07674 16.6688 1.87518 17.9381 3.14288C19.2074 4.41059 20.008 6.07222 20.2083 7.85494M19.3296 14.8664V17.5022C19.3306 17.7469 19.2805 17.9891 19.1825 18.2133C19.0845 18.4375 18.9407 18.6388 18.7604 18.8042C18.5801 18.9697 18.3672 19.0956 18.1354 19.174C17.9036 19.2524 17.658 19.2815 17.4142 19.2595C14.7106 18.9657 12.1135 18.0418 9.83172 16.5621C7.70881 15.2131 5.90896 13.4133 4.55998 11.2904C3.07508 8.99821 2.151 6.38851 1.8626 3.67269C1.84064 3.42972 1.86952 3.18484 1.94739 2.95364C2.02526 2.72244 2.15041 2.50999 2.31489 2.32982C2.47936 2.14964 2.67955 2.00568 2.90271 1.90711C3.12587 1.80854 3.3671 1.75752 3.61106 1.75729H6.24693C6.67334 1.75309 7.08672 1.90409 7.41002 2.18213C7.73333 2.46017 7.9445 2.84629 8.00418 3.26852C8.11544 4.11206 8.32176 4.9403 8.61922 5.73745C8.73743 6.05193 8.76302 6.39371 8.69294 6.72229C8.62287 7.05086 8.46007 7.35246 8.22384 7.59135L7.10799 8.7072C8.35876 10.9069 10.1801 12.7282 12.3797 13.9789L13.4956 12.8631C13.7345 12.6269 14.0361 12.4641 14.3646 12.394C14.6932 12.3239 15.035 12.3495 15.3495 12.4677C16.1466 12.7652 16.9749 12.9715 17.8184 13.0828C18.2452 13.143 18.635 13.3579 18.9136 13.6868C19.1923 14.0157 19.3403 14.4355 19.3296 14.8664Z" stroke="inherit" stroke-width="2.343" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_32097_57">
+              <rect width="21.087" height="21.087" fill="white"/>
+              </clipPath>
+              </defs>
+              </svg>
+            Call now </a>
+          </div>   
+          <div class="btn-toggle menu_icon_box">
+              <div class="line1"></div>
+              <div class="line2"></div>
+              <div class="line3"></div>
+          </div>
+            <div class="menu-links box">
+              <div class="nonebar">
+                <a href="#"><img src="https://uscleaningoh.com/wp-content/uploads/2024/12/Logo-usc.png" alt="" class="logohead logo-m" draggable="false"></a>
+              </div>
+              <div class="menu-linksbtn">
+                <ul>
+                  <li><a href="#"> Home </a></li>
+                  <li><a href="#services"> Services </a></li>
+                  <!-- dropdown services -->
+                  <li><a href="#aboutus"> About us </a></li>
+                  <li><a href="#reviews"> Reviews </a></li>
+                  <li><a href="#portfolio"> Portfolio </a></li>
+                  <li><a href="#contact"> Contact </a></li>
+                </ul>
+              </div>
+              <div class="menusocial">
+                <ul>
+                  <li class="callnow callw"><a class=" btn1" href="tel:+1">
+                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_32097_57)">
+                      <path d="M13.2232 4.39316C14.0814 4.56059 14.8701 4.98031 15.4884 5.59857C16.1066 6.21684 16.5263 7.00554 16.6938 7.86372M13.2232 0.878662C15.0062 1.07674 16.6688 1.87518 17.9381 3.14288C19.2074 4.41059 20.008 6.07222 20.2083 7.85494M19.3296 14.8664V17.5022C19.3306 17.7469 19.2805 17.9891 19.1825 18.2133C19.0845 18.4375 18.9407 18.6388 18.7604 18.8042C18.5801 18.9697 18.3672 19.0956 18.1354 19.174C17.9036 19.2524 17.658 19.2815 17.4142 19.2595C14.7106 18.9657 12.1135 18.0418 9.83172 16.5621C7.70881 15.2131 5.90896 13.4133 4.55998 11.2904C3.07508 8.99821 2.151 6.38851 1.8626 3.67269C1.84064 3.42972 1.86952 3.18484 1.94739 2.95364C2.02526 2.72244 2.15041 2.50999 2.31489 2.32982C2.47936 2.14964 2.67955 2.00568 2.90271 1.90711C3.12587 1.80854 3.3671 1.75752 3.61106 1.75729H6.24693C6.67334 1.75309 7.08672 1.90409 7.41002 2.18213C7.73333 2.46017 7.9445 2.84629 8.00418 3.26852C8.11544 4.11206 8.32176 4.9403 8.61922 5.73745C8.73743 6.05193 8.76302 6.39371 8.69294 6.72229C8.62287 7.05086 8.46007 7.35246 8.22384 7.59135L7.10799 8.7072C8.35876 10.9069 10.1801 12.7282 12.3797 13.9789L13.4956 12.8631C13.7345 12.6269 14.0361 12.4641 14.3646 12.394C14.6932 12.3239 15.035 12.3495 15.3495 12.4677C16.1466 12.7652 16.9749 12.9715 17.8184 13.0828C18.2452 13.143 18.635 13.3579 18.9136 13.6868C19.1923 14.0157 19.3403 14.4355 19.3296 14.8664Z" stroke="inherit" stroke-width="2.343" stroke-linecap="round" stroke-linejoin="round"/>
+                      </g>
+                      <defs>
+                      <clipPath id="clip0_32097_57">
+                      <rect width="21.087" height="21.087" fill="white"/>
+                      </clipPath>
+                      </defs>
+                      </svg>
+                    Call now </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </nav>
+    </div>
+</header>
   
 <script src="scriptheader.js"></script>   
 </body>
