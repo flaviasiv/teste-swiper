@@ -1,148 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8" />
-  <link rel="stylesheet" href="style.css">
-  <title>Swiper demo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
-
-  <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-  <!-- Demo styles -->
-  <style>
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styleheader.css">
 </head>
-
 <body>
-  
-  <!-- Swiper -->
-   <!-- Slider main container -->
-<div class="swiper-container">
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide">
-            <img src="IA1.jpg" alt="">
-            <div class="infos">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos illo, quo unde ratione, non, ullam eligendi expedita ipsum molestiae iste error? Soluta fugiat, optio dolores autem voluptas similique doloremque voluptate!</p>
-            </div>
-        </div>
-      <div class="swiper-slide">
-        <img src="IA2.jpg" alt="">
-        <div class="infos">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos illo, quo unde ratione, non, ullam eligendi expedita ipsum molestiae iste error? Soluta fugiat, optio dolores autem voluptas similique doloremque voluptate!</p>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <img src="IA3.jpg" alt="">
-        <div class="infos">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos illo, quo unde ratione, non, ullam eligendi expedita ipsum molestiae iste error? Soluta fugiat, optio dolores autem voluptas similique doloremque voluptate!</p>
-        </div>
+    <div class='main-tool-bar'>Header</div>
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <header class="header">
+          <h1 class="title">ScrollSmoother</h1>
+          <button class="button">Jump to C</button>
+        </header>
+        <div class="box box-a" data-speed="clamp(0.5)">a</div>
+        <div class="box box-b" data-speed="clamp(0.8)">b</div>
+        <div class="box box-c" data-speed="1.5">c</div>
+        <div class="line"></div>
       </div>
     </div>
-    
-    <!-- If we need navigation buttons 
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>-->
-</div>
 
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-  <!-- Include plugin after Swiper -->
-  <!-- <script>
-    /* ========
-Debugger plugin, simple demo plugin to console.log some of callbacks
-======== */
-    function myPlugin({ swiper, extendParams, on }) {
-      extendParams({
-        debugger: false,
-      });
-
-      on('init', () => {
-        if (!swiper.params.debugger) return;
-        console.log('init');
-      });
-      on('click', (swiper, e) => {
-        if (!swiper.params.debugger) return;
-        console.log('click');
-      });
-      on('tap', (swiper, e) => {
-        if (!swiper.params.debugger) return;
-        console.log('tap');
-      });
-      on('doubleTap', (swiper, e) => {
-        if (!swiper.params.debugger) return;
-        console.log('doubleTap');
-      });
-      on('sliderMove', (swiper, e) => {
-        if (!swiper.params.debugger) return;
-        console.log('sliderMove');
-      });
-      on('slideChange', () => {
-        if (!swiper.params.debugger) return;
-        console.log(
-          'slideChange',
-          swiper.previousIndex,
-          '->',
-          swiper.activeIndex
-        );
-      });
-      on('slideChangeTransitionStart', () => {
-        if (!swiper.params.debugger) return;
-        console.log('slideChangeTransitionStart');
-      });
-      on('slideChangeTransitionEnd', () => {
-        if (!swiper.params.debugger) return;
-        console.log('slideChangeTransitionEnd');
-      });
-      on('transitionStart', () => {
-        if (!swiper.params.debugger) return;
-        console.log('transitionStart');
-      });
-      on('transitionEnd', () => {
-        if (!swiper.params.debugger) return;
-        console.log('transitionEnd');
-      });
-      on('fromEdge', () => {
-        if (!swiper.params.debugger) return;
-        console.log('fromEdge');
-      });
-      on('reachBeginning', () => {
-        if (!swiper.params.debugger) return;
-        console.log('reachBeginning');
-      });
-      on('reachEnd', () => {
-        if (!swiper.params.debugger) return;
-        console.log('reachEnd');
-      });
-    }
-  </script> -->
-
-  <script>
-    var menu = ['Slide 1', 'Slide 2', 'Slide 3']
-var mySwiper = new Swiper ('.swiper-container', {
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-			clickable: true,
-        renderBullet: function (index, className) {
-          return '<span class="' + className + '">' + (menu[index]) + '</span>';
-        },
-    },
-
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  })
-  </script>
+<script src="scriptheader.js"></script>   
 </body>
-
 </html>
